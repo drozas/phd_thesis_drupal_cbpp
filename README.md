@@ -3,7 +3,7 @@
 Repository for source files of the PhD thesis "Self-organisation in Commons-Based Peer Production. 
 Drupal: 'the drop is always moving' "
 
-Download this thesis in PDF at https://davidrozas.cc/phd
+**Download this thesis in PDF at https://davidrozas.cc/phd
 
 ## Abstract:
 
