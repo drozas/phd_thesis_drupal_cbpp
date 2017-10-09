@@ -3,7 +3,7 @@
 Repository for source files of the PhD thesis "Self-organisation in Commons-Based Peer Production. 
 Drupal: 'the drop is always moving' "
 
-Abstract:
+## Abstract:
 
 Commons-Based Peer Production (CBPP) is a new model of socio-economic production in which groups of individuals cooperate with each other without a traditional hierarchical organisation to produce common and public goods, such as Wikipedia or GNU/Linux. There is a need to understand how these communities govern and organise themselves as they grow in size and complexity. Following an ethnographic approach, this thesis explores the emergence of and changes in the organisational structures and processes of Drupal: a large and global CBBP community which, over the past fifteen years, has coordinated the work of hundreds of thousands of participants to develop a technology which currently powers more than 2% of websites worldwide.
 
