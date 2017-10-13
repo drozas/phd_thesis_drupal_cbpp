@@ -1,0 +1,242 @@
+\documentclass[a4paper,12pt, oneside]{report}
+\usepackage[hyphens]{url}
+\usepackage[style=apa, backend=biber, urldate=long, uniquename=false]{biblatex}
+\DeclareLanguageMapping{british}{british-apa}
+\addbibresource{bibliography.bib}
+\usepackage[british]{babel}
+\usepackage{hyperref}
+\usepackage[top=1in, left=1.5in, right=1in, bottom=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{setspace}
+\usepackage{titlepic}
+\usepackage{graphicx}
+\usepackage[nodayofweek]{datetime}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{tablefootnote}
+\usepackage{multirow}
+\usepackage{csquotes}
+\usepackage{setspace}
+
+% Ordinals and numbering
+\usepackage[super]{nth}
+\usepackage[gen]{eurosym}
+
+%Plots with Latex
+\usepackage{pgfplots}
+%change the size of each plot and also guarantee compatibility backwards
+\pgfplotsset{width=12cm,compat=1.9}
+%required to work with full dates
+\usepgfplotslibrary{dateplot}
+
+%Changing main font
+\usepackage{mathpazo}
+
+% Subscripts - defining new command
+\newcommand{\textunderscript}[1]{$_{\textup{#1}}$}
+
+% Change fontsize of figures
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+
+% Change for table on layers
+\usepackage{longtable}
+
+%% Style
+%% Paragraph settings
+\setlength{\parskip}{0.9em}
+
+% Checkmarks
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+%for CC
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=0.6pt](char){#1};}}
+
+% Allows to add subsubsections
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%Make footnotes global
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+
+% Headers
+\usepackage{fancyhdr}
+
+% Fancy chapter heading
+\usepackage[Bjornstrup]{fncychap}
+ \renewcommand{\headrulewidth}{1.5pt}
+ 
+\usepackage[acronym, nonumberlist, nopostdot]{glossaries}
+
+% Package to deal with appendices
+\usepackage[toc,page]{appendix}
+ 
+\makeglossaries
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% ACRONYMS %%%%%%%%%%%%%
+\newacronym{cbpp}{CBPP}{Commons-Based Peer Production}
+\newacronym{floss}{FLOSS}{Free/Libre Open Source Software}
+\newacronym{mit}{MIT}{Massachusetts Institute of Technology}
+\newacronym{fsf}{FSF}{Free Software Foundation}
+\newacronym{gnu}{GNU}{GNU's Not Unix (recursive acronym)}
+\newacronym{osi}{OSI}{Open Source Initiative}
+\newacronym{vcs}{VCS}{Version Control System}
+\newacronym{dvcs}{DVCS}{Distributed Version Control System}
+\newacronym{ekm}{EKM}{Extended Klandermans Model}
+\newacronym{vist}{VIST}{Valence, Instrumentality, Self-efficacy, Trust}
+\newacronym{php}{PHP}{PHP: Hypertext Preprocessor (recursive acronym)}
+\newacronym{gpl}{GPL}{General Public License}
+\newacronym{cms}{CMS}{Content Management System}
+\newacronym{fosdem}{FOSDEM}{Free and Open Source Software Developers' European Meeting}
+\newacronym{f2f}{F2F}{Face-to-face}
+\newacronym{osuol}{OSUOL}{Oregon State University Open Source Lab}
+\newacronym{it}{IT}{Information Technology}
+\newacronym{nasa}{NASA}{National Aeronautics and Space Administration}
+\newacronym{at}{AT}{Activity Theory}
+\newacronym{gnome}{GNOME}{GNU Network Object Model Environment}
+\newacronym{sql}{SQL}{Structured Query Language}
+\newacronym{ssh}{SSH}{Secure SHell}
+\newacronym{css}{CSS}{Cascading Style Sheet}
+\newacronym{html}{HTML}{Hypertext Markup Language}
+\newacronym{ux}{UX}{User Experience}
+\newacronym{pdf}{PDF}{Portable Document Format}
+\newacronym{caqdas}{CAQDAS}{Computer Assisted Qualitative Data Analysis Software}
+\newacronym{irc}{IRC}{Internet Relay Chat}
+\newacronym{oscom}{OSCOM}{Open Source CMS Conference}
+\newacronym{cc}{CC}{Creative Commons}
+\newacronym{cvs}{CVS}{Concurrent Versioning System}
+\newacronym{url}{URL}{Uniform Resource Locator}
+\newacronym{api}{API}{Application Program Interface}
+\newacronym{rtbc}{RTBC}{Reviewed and Tested By the Community}
+\newacronym{pap}{PAP}{Project Application Process}
+\newacronym{bdfl}{BDFL}{Benevolent Dictator For Life}
+\newacronym{bof}{BoF}{Birds of a Feather}
+\newacronym{na}{N/A}{Not Applicable}
+\newacronym{adsl}{ADSL}{Asymmetric Digital Subscriber Line}
+\newacronym{ant}{ANT}{Actor-Network Theory}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Fixing issue with padding on ToF
+\makeatletter
+\renewcommand\@pnumwidth{2.2em}
+\makeatother
+
+\begin{document}
+
+\input{sections/cover}
+
+\onehalfspacing
+%%% SECTIONS WITH EMPTY STYLE %%%%%%
+\pagestyle{empty}
+
+%% Declaration
+\newpage
+\input{sections/declaration}
+
+%% Abstract
+\newpage
+\input{sections/abstract}
+
+%Acknowledgement
+\newpage
+\input{sections/acknowledgment}
+
+%%% END SECTIONS WITH EMPTY STYLE %%%%%%
+
+%%% Regular style starts here
+\clearpage
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,LO]{\slshape \nouppercase \leftmark}
+\fancyhead[LE,RO]{\thepage}
+
+%% Print index 
+\newpage
+\setcounter{tocdepth}{1} 
+\tableofcontents
+\setcounter{tocdepth}{1} %to solve issue with appendixes affecting list of figs and tables
+
+%% Print list of figures and tables
+\newpage
+\listoftables
+\newpage
+\listoffigures
+
+%Print list of acronyms
+\glsaddallunused
+\printglossary[type=\acronymtype, title=List of acronyms]
+
+%%%%%%%% CHAPTERS %%%%%%%%%%%%
+
+% A 3-4 pages preface introducing the topic and the relevance
+\input{chapters/preface}
+
+%% Central ideas and concepts of the thesis regarding CBPP and FLOSS
+\input{chapters/introduction}
+
+%% Presentation of case study and research questions
+\input{chapters/drupal}
+
+%% Chapter with discussion of theoretical framework
+\input{chapters/theoretical_frameworks}
+
+%% Chapter presenting choice of methods
+\input{chapters/methods}
+
+%% Chapter on study of the notion of contribution
+\input{chapters/notion_contribution}
+
+%% Study of custom and contributed systems
+\input{chapters/sts_contrib}
+
+%% Study of core system
+\input{chapters/sts_core}
+
+%% Study of local events and DrupalCamps systems
+\input{chapters/sts_local_camps}
+
+%% Study of DrupalCons system
+\input{chapters/sts_dcons}
+
+%% Analysis
+\input{chapters/loosen_int}
+
+%% Conclusions - summary of contributions of the thesis
+\input{chapters/conclusion}
+
+
+%%%%%%%% END CHAPTERS %%%%%%%%%
+
+%% Bibliography
+\newpage
+\phantomsection
+%% Added to include in ToC. Requires phantom section to work also on PDF
+\printbibliography[heading=bibintoc,title={References}]
+
+\newpage
+
+\begin{appendices}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\include{appendixes/unis_ethical_guidelines}
+\singlespacing
+\include{appendixes/consent_form}
+\include{appendixes/interview_guide}
+\include{appendixes/consent_form_stage_2}
+\include{appendixes/interview_guide_stage_2}
+\include{appendixes/consent_form_stage_3}
+\include{appendixes/interview_guide_stage_3}
+\onehalfspacing
+\include{appendixes/list_conflicts}
+
+\end{appendices}
+
+\end{document}
